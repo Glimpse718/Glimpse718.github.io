@@ -1,65 +1,245 @@
 <!DOCTYPE html>
-<html id="html" lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FCC Landing Page (1/24/21)</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <!-- Nav Bar -->
-    <header id="header">
-
-    <ul class="nav-bar">
-        <li class="nav-link" id="nav-home">
-            
-            <a href="#html"><img id="header-img" src="logo-progress-bar.gif" alt="logo"></a></li>
-        <li class="nav-link"><a href="#services">SERVICES</a></li>
-        <li class="nav-link"><a href="#about">ABOUT</a></li>
-        <li class="nav-link"><a href="#reviews">REVIEWS</a></li>        
-    </ul>
-
-    </header>
-    <!-- Main content under nav bar -->
-
-    <main id="main">
-        <p class="into-p">
-            This is a Landing Page built for Free Code Camp to test. There will be no Javascript. 
-        </p>
-    </main>
-
-    <!-- Sections -->
-
-    <section id="services">
-        <p>Wanna get smart? Well how about a "Smart phone"?</p>
-        <div class="container">
-            <div class="left">
-                <img id="img-phone" src="iPhone-transparent-png.png" alt="">
-            </div>
-             
-            <div class="right">
-                <iframe id="video-flat" width="560" height="315" src="https://www.youtube.com/embed/Q7yvvq-9ytE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
+    <title>The Andean Anomaly: El Cafeto Loco</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        body {
+            font-family: 'Space Mono', monospace;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(34, 197, 94, 0.1) 0%, transparent 50%);
+        }
+        h1, h2, h3, .bungee-font {
+            font-family: 'Bungee', cursive;
+        }
         
-    </section>
+        /* Custom Animations */
+        @keyframes jitter {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(2px, -2px) rotate(1deg); }
+            50% { transform: translate(-2px, 2px) rotate(-1deg); }
+            75% { transform: translate(2px, 2px) rotate(0deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+        .animate-jitter:hover {
+            animation: jitter 0.2s infinite;
+        }
 
-    <section id="about">
-        <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet laborum aliquid consectetur vel quis modi harum, enim quidem ut libero repudiandae, adipisci voluptatem illum ex quo dignissimos repellat minus mollitia.
-        </p>
-    </section>
+        @keyframes pulse-neon {
+            0%, 100% { box-shadow: 0 0 10px #22c55e, 0 0 20px #22c55e; }
+            50% { box-shadow: 0 0 20px #22c55e, 0 0 30px #22c55e; }
+        }
+        .neon-border {
+            border: 2px solid #22c55e;
+            animation: pulse-neon 2s infinite;
+        }
 
-    <section id="reviews">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis ad quas iure velit blanditiis nulla debitis reprehenderit eligendi dicta quidem corrupti laborum amet accusantium, itaque quod doloribus minima in ducimus.
-        </p>
-    </section>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* ZigZag Separator */
+        .zigzag {
+            background: 
+                linear-gradient(135deg, #ec4899 25%, transparent 25%) -50px 0,
+                linear-gradient(225deg, #ec4899 25%, transparent 25%) -50px 0,
+                linear-gradient(315deg, #ec4899 25%, transparent 25%),
+                linear-gradient(45deg, #ec4899 25%, transparent 25%);	
+            background-size: 20px 20px;
+            height: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-pink-500 selection:text-white pb-20">
+
+    <div class="max-w-4xl mx-auto pt-12 px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header Section -->
+        <header class="text-center mb-16 relative">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-20 pointer-events-none flex justify-center items-center overflow-hidden z-[-1]">
+                <i class="fas fa-bolt text-9xl text-yellow-400 animate-pulse"></i>
+            </div>
+            
+            <span class="bg-pink-600 text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest mb-4 inline-block transform -rotate-2">Top Secret Phenomenon</span>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-yellow-400 to-pink-500 leading-tight drop-shadow-lg transform -rotate-1">
+                EL CAFETO LOCO
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed border-b-4 border-dashed border-yellow-500 pb-6">
+                How a freak accident in the high Andes created a coffee so wildly addicting, it makes your morning espresso look like warm milk.
+            </p>
+        </header>
+
+        <!-- The Setup -->
+        <section class="mb-16 relative">
+            <div class="bg-slate-800 rounded-3xl p-8 border-l-8 border-green-500 transform hover:-translate-y-2 transition duration-300 shadow-2xl relative overflow-hidden">
+                <div class="absolute -right-10 -top-10 opacity-10 text-9xl">
+                    <i class="fas fa-mountain"></i>
+                </div>
+                <h2 class="text-3xl text-green-400 mb-4 flex items-center gap-3">
+                    <i class="fas fa-map-marker-alt"></i> Phase 1: The Geography
+                </h2>
+                <div class="flex flex-col md:flex-row gap-6 items-center">
+                    <div class="flex-1">
+                        <p class="text-lg leading-relaxed">
+                            Deep in the mist-shrouded peaks of the Andean cordillera, two distinct crops are cultivated in dangerously close proximity:
+                        </p>
+                        <ul class="mt-4 space-y-3 font-bold">
+                            <li class="flex items-center gap-2 text-yellow-300">
+                                <i class="fas fa-seedling"></i> Farm A: Premium Arabica Coffee Beans
+                            </li>
+                            <li class="flex items-center gap-2 text-white">
+                                <i class="fas fa-leaf"></i> Farm B: *Ahem* The "Coca" Plant
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="w-32 h-32 bg-slate-700 rounded-full flex items-center justify-center animate-float border-4 border-dashed border-gray-500">
+                        <i class="fas fa-arrows-alt-h text-4xl text-gray-400"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="flex justify-center my-10">
+            <i class="fas fa-arrow-down text-4xl text-pink-500 animate-bounce"></i>
+        </div>
+
+        <!-- The Accident -->
+        <section class="mb-16">
+            <div class="bg-pink-900/40 rounded-3xl p-8 border-4 border-pink-500 neon-border transform rotate-1 hover:rotate-0 transition duration-300 animate-jitter relative">
+                <div class="absolute top-4 right-4 bg-yellow-400 text-black px-3 py-1 font-bold rounded-lg text-sm rotate-12">
+                    THE CATALYST
+                </div>
+                <h2 class="text-3xl text-pink-400 mb-4 flex items-center gap-3">
+                    <i class="fas fa-wind"></i> Phase 2: The "Great Gust" of '99
+                </h2>
+                <p class="text-lg leading-relaxed mb-6">
+                    It was harvest season. The coffee beans were laid out to dry in the sun. Just 500 yards upwind, a clandestine processing facility was finalizing a massive batch of, let's call it, "Andean Marching Powder."
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                    <div class="bg-slate-800 p-4 rounded-xl">
+                        <i class="fas fa-cloud-showers-heavy text-3xl text-blue-400 mb-2"></i>
+                        <h3 class="text-xl text-white">Freak Weather</h3>
+                        <p class="text-sm text-gray-400">A localized micro-tornado forms.</p>
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-plus text-3xl text-yellow-400"></i>
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-xl">
+                        <i class="fas fa-snowflake text-3xl text-white mb-2"></i>
+                        <h3 class="text-xl text-white">The Mix-Up</h3>
+                        <p class="text-sm text-gray-400">100 kilos of powder is swept up and dusted perfectly over the damp coffee beans.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="zigzag my-12 opacity-50"></div>
+
+        <!-- The Chemistry -->
+        <section class="mb-16">
+            <div class="bg-slate-800 rounded-3xl p-8 border-r-8 border-yellow-400 transform hover:scale-[1.02] transition duration-300">
+                <h2 class="text-3xl text-yellow-400 mb-6 flex items-center gap-3">
+                    <i class="fas fa-flask"></i> Phase 3: The Alchemy
+                </h2>
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <p class="text-lg leading-relaxed mb-4">
+                            When the farmers roasted the beans, they didn't realize they were thermally bonding the caffeine molecules with the illicit alkaloid dust. The result? A bean that looks normal but packs a scientifically impossible punch.
+                        </p>
+                        <div class="bg-gray-900 p-4 rounded-lg border border-gray-700 font-mono text-sm text-green-400">
+                            > ANALYSIS REPORT<br>
+                            > CAFFEINE LEVEL: 400%<br>
+                            > UNKNOWN ALKALOID: YES<br>
+                            > ADDICTION METRIC: OFF THE CHARTS
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/3 flex items-center justify-center">
+                        <div class="relative">
+                            <i class="fas fa-coffee text-8xl text-yellow-700"></i>
+                            <div class="absolute -top-4 -right-4 bg-red-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl animate-ping">
+                                !
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Symptoms Timeline -->
+        <section class="mb-16">
+            <h2 class="text-4xl text-center mb-10 text-white bungee-font">The 4 Stages of a Cup</h2>
+            
+            <div class="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-1 before:bg-gradient-to-b before:from-transparent before:via-pink-500 before:to-transparent">
+                
+                <!-- Stage 1 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-slate-900 bg-green-500 text-slate-900 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        1
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-slate-800 p-6 rounded-2xl shadow-xl border border-green-500/30 group-hover:border-green-500 transition-colors">
+                        <h3 class="text-2xl text-green-400 mb-2">0-5 Minutes: "The Awakening"</h3>
+                        <p class="text-gray-300">Your pupils dilate. You can suddenly hear the electricity humming in your walls. You feel the urge to organize your sock drawer by thread count.</p>
+                    </div>
+                </div>
+
+                <!-- Stage 2 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-slate-900 bg-yellow-400 text-slate-900 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        2
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-slate-800 p-6 rounded-2xl shadow-xl border border-yellow-400/30 group-hover:border-yellow-400 transition-colors">
+                        <h3 class="text-2xl text-yellow-400 mb-2">15 Minutes: "The Overclock"</h3>
+                        <p class="text-gray-300">You start speaking in cursive. You text 45 people you haven't spoken to since high school. You decide to start a podcast about 14th-century agriculture.</p>
+                    </div>
+                </div>
+
+                <!-- Stage 3 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-slate-900 bg-pink-500 text-slate-900 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        3
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-slate-800 p-6 rounded-2xl shadow-xl border border-pink-500/30 group-hover:border-pink-500 transition-colors">
+                        <h3 class="text-2xl text-pink-500 mb-2">1 Hour: "The Craving"</h3>
+                        <p class="text-gray-300">The mug is empty. A profound emptiness fills your soul. You begin shaking the coffee grinder upside down looking for "just one more drop."</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Warning Footer -->
+        <footer class="mt-20 border-t border-gray-700 pt-8 text-center">
+            <div class="bg-red-900/50 text-red-200 p-6 rounded-xl border border-red-500 inline-block max-w-2xl mx-auto">
+                <i class="fas fa-exclamation-triangle text-3xl text-red-500 mb-3 animate-pulse"></i>
+                <h3 class="text-xl font-bold mb-2">LEGAL & REALITY DISCLAIMER</h3>
+                <p class="text-sm">
+                    This infographic is 100% fictional, highly exaggerated, and created for comedic/entertainment purposes only. The "Andean Anomaly" does not exist. Mixing illicit substances with caffeine is incredibly dangerous and illegal. Please stick to your local barista's vanilla latte.
+                </p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Background decorative floating elements -->
+    <div class="fixed top-1/4 left-10 text-4xl text-green-500/20 animate-float pointer-events-none z-[-1]"><i class="fas fa-leaf"></i></div>
+    <div class="fixed top-2/3 right-20 text-6xl text-pink-500/20 animate-float pointer-events-none z-[-1]" style="animation-delay: 1s;"><i class="fas fa-coffee"></i></div>
+    <div class="fixed bottom-1/4 left-1/4 text-3xl text-yellow-500/20 animate-float pointer-events-none z-[-1]" style="animation-delay: 2s;"><i class="fas fa-bolt"></i></div>
 
 </body>
 </html>
-
-
-
-
